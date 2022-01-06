@@ -1,0 +1,128 @@
+@import "_reset";
+
+body {
+  background-color: lightpink;
+  font-size: 16px;
+  text-align: center;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1300px;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+h1 {
+  margin: 1rem 0;
+  color: red;
+  text-align: center;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+//2d cube
+.cube-info {
+  margin-top: 4rem;
+  margin-right: 50rem;
+  max-width: 300px;
+  position: relative;
+  padding-left: 5rem;
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform: rotateX(90deg) rotateY(90deg);
+}
+
+.box-2d {
+  height: 230px;
+  position: absolute;
+  width: 230px;
+}
+.box-1 {
+  border: 5px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-45deg) skew(15deg, 15deg);
+}
+.box-2 {
+  border: 5px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(15deg) skew(15deg, 15deg) translate(-50%, 100%);
+}
+.box-3 {
+  border: 5px solid;
+  transform: rotate(-15deg) skew(-15deg, -15deg) translate(50%, 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//3d cube
+.wrapper {
+  margin-left: 16rem;
+  top: 54%;
+  left: 50%;
+  position: absolute;
+  perspective: 1000px;
+}
+.box-area {
+  position: relative;
+  transform-style: preserve-3d;
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform: rotateX(90deg) rotateY(90deg);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+.box-3d {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border: 2px solid white;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.front {
+  box-shadow: 2px 1px 6px 3px rgba(225, 225, 225, 0.9);
+  transform: translateX(-200px) translateY(-200px) translateZ(200px);
+}
+.back {
+  transform: translateX(-200px) translateY(-200px) translateZ(-200px);
+  box-shadow: 2px 1px 6px 3px rgba(225, 225, 225, 0.9);
+}
+.right {
+  transform: translateY(-200px) rotateY(90deg);
+  box-shadow: 2px 1px 6px 3px rgba(225, 225, 225, 0.9);
+}
+.left {
+  transform: translateX(-400px) translateY(-200px) rotateY(90deg);
+  box-shadow: 2px 1px 6px 3px rgba(225, 225, 225, 0.9);
+}
+.bottom {
+  transform: translateX(-200px) rotateX(90deg);
+  box-shadow: 2px 1px 6px 3px rgba(225, 225, 225, 0.9);
+}
+.top {
+  transform: translateX(-200px) translateY(-400px) rotateX(90deg);
+  box-shadow: 2px 1px 6px 3px rgba(225, 225, 225, 0.9);
+}
